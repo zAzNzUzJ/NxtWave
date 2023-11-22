@@ -26,15 +26,42 @@ const AddResourceItemPage = () => {
 
     // Validate the item details
     if (
-      !itemDetails.title ||
-      !itemDetails.link ||
-      !itemDetails.description ||
-      !itemDetails.iconurl ||
-      !itemDetails.category
+      !itemDetails.title 
     ) {
-      toast.error("Please fill in all required fields");
+      toast.error("Please fill in all Title field");
       return;
     }
+    if (
+      
+      !itemDetails.link 
+    ) {
+      toast.error("Please fill in required LINK");
+      return;
+    }
+
+    if (
+      
+      !itemDetails.description
+      
+    ) {
+      toast.error("Please fill in  required description");
+      return;
+    }
+    if (
+      
+      !itemDetails.iconurl 
+    ) {
+      toast.error("Please fill in aICON Url");
+      return;
+    }
+    if (
+    
+      !itemDetails.category
+    ) {
+      toast.error("Please fill in  Category");
+      return;
+    }
+
 
     try {
       // Make API request to add resource item
@@ -74,7 +101,7 @@ const AddResourceItemPage = () => {
     <div className="resoruce_container">
       <h2>Add Resource Item</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title" className="inputxt">Title:</label>
         <input
           type="text"
           id="title"
@@ -83,7 +110,7 @@ const AddResourceItemPage = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="link">Link:</label>
+        <label htmlFor="link" className="inputxt">Link:</label>
         <input
           type="text"
           id="link"
@@ -92,15 +119,8 @@ const AddResourceItemPage = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          value={itemDetails.description}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="iconurl" className="iconurl">
+        
+        <label htmlFor="iconurl" className="inputxt">
           Icon URL:
         </label>
         <input
@@ -111,7 +131,7 @@ const AddResourceItemPage = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="tagname">Tag Name:</label>
+        <label htmlFor="tagname"  >Tag Name:</label>
         <select
           id="tagname"
           name="tagname"
@@ -132,8 +152,17 @@ const AddResourceItemPage = () => {
           value={itemDetails.category}
           onChange={handleChange}
         />
+        <label htmlFor="description" className="inputxt">Description:
+        <textarea
+          id="description"
+          name="description"
+          value={itemDetails.description}
+          onChange={handleChange}
+        />
+        </label>
 
-        <button type="submit">CREATE</button>
+      
+        <button type="submit" className="subbtn">CREATE</button>
       </form>
       <img src={Image_9} alt="Large Image" className="large-image" />
     </div>
