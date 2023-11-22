@@ -21,7 +21,7 @@ main {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -180,6 +180,7 @@ nav {
   background: #2dca73;
   border: transparent;
   border-radius: 5px;
+  color: #ffffff;
 }
 
 .btn_add:hover {
@@ -199,18 +200,29 @@ nav {
 /* form */
 form {
   flex: 1;
-  max-width: 40%;
+  max-width: 50%;
   float: left;
 }
+.subbtn{
+  padding: 5px 20px;
+  align-items: center;
+  background: rgb(45, 121, 202);
+  border: transparent;
+  border-radius: 5px;
+  color: #ffffff;
+  margin-top: 25px;
+  text-align: center;
 
-.iconurl {
+}
+.inputxt {
   display: flex;
-  margin-top: 20px;
+  
+  margin-top: 25px;
 }
 
 .category {
   display: flex;
-  margin-top: 20px;
+margin-top: 40px;
 }
 
 /* large image */
